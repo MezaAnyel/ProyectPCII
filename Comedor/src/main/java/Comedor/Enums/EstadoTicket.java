@@ -1,16 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
- */
-package Comedor.Enums;
-
-/**
- *
- * @author F20LAB10E03
- */
+package comedor.enums;
+ 
 public enum EstadoTicket {
-    ACTIVO,
-    CANJEADO,
-    EXPIRADO,
-    CANCELADO
+    ACTIVO("Activo"),
+    CANJEADO("Canjeado"),
+    CANCELADO("Cancelado"),
+    VENCIDO("Vencido");
+ 
+    private final String descripcion;
+ 
+    EstadoTicket(String descripcion) {
+        this.descripcion = descripcion;
+    }
+ 
+    public String getDescripcion() {
+        return descripcion;
+    }
+ 
+    @Override
+    public String toString() {
+        return descripcion;
+    }
 }

@@ -1,15 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
- */
-package Comedor.Enums;
+package comedor.enums;
 
-/**
- *
- * @author F20LAB10E03
- */
 public enum TipoComida {
-    DESAYUNO,
-    ALMUERZO,
-    CENA
+    DESAYUNO("Desayuno"),
+    ALMUERZO("Almuerzo"),
+    CENA("Cena");
+
+    private final String descripcion;
+
+    TipoComida(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    @Override
+    public String toString() {
+        return descripcion;
+    }
 }

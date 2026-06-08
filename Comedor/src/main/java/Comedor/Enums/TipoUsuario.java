@@ -1,15 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
- */
-package Comedor.Enums;
-
-/**
- *
- * @author F20LAB10E03
- */
+package comedor.enums;
+ 
 public enum TipoUsuario {
-    ESTUDIANTE,
-    PROFESOR,
-    PERSONAL
+    ESTUDIANTE("Estudiante"),
+    PROFESOR("Profesor"),
+    PERSONAL_ADMINISTRATIVO("Personal Administrativo");
+ 
+    private final String descripcion;
+ 
+    TipoUsuario(String descripcion) {
+        this.descripcion = descripcion;
+    }
+ 
+    public String getDescripcion() {
+        return descripcion;
+    }
+ 
+    @Override
+    public String toString() {
+        return descripcion;
+    }
 }
+ 
