@@ -1,0 +1,254 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║           SISTEMA DE COMEDOR UNIVERSITARIO - 3 SEDES                      ║
+║                      PROYECTO COMPLETAMENTE IMPLEMENTADO                  ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+
+✅ PROYECTO COMPLETADO Y LISTO PARA USAR
+════════════════════════════════════════════════════════════════════════════
+
+El sistema Java de comedor universitario con persistencia en Excel está 
+completamente implementado con todas las funcionalidades solicitadas.
+
+
+📦 CONTENIDO DEL PROYECTO
+════════════════════════════════════════════════════════════════════════════
+
+comedor/
+├── 🎯 POINT OF ENTRY
+│   └── src/main/java/comedor/sistema/Principal.java
+│       ├── main() → Punto de entrada de la aplicación
+│       ├── Menú interactivo por consola
+│       ├── Autenticación de usuarios
+│       ├── Menú de usuario regular
+│       ├── Menú de administrador
+│       └── Registro de nuevos usuarios
+│
+├── 📊 ENUMERACIONES (4 archivos)
+│   └── src/main/java/comedor/enums/
+│       ├── TipoUsuario.java          → ESTUDIANTE, PROFESOR, PERSONAL
+│       ├── TipoComida.java           → DESAYUNO, ALMUERZO, CENA
+│       ├── EstadoTicket.java         → ACTIVO, CANJEADO, CANCELADO, VENCIDO
+│       └── Sede.java                 → SEDE_CENTRAL, SEDE_NORTE, SEDE_SUR
+│
+├── 👥 MODELO DE DATOS (6 archivos)
+│   └── src/main/java/comedor/modelo/
+│       ├── Usuario.java              → Clase abstracta base
+│       ├── Estudiante.java           → Subclase de Usuario
+│       ├── Profesor.java             → Subclase de Usuario
+│       ├── PersonalAdministrativo.java → Subclase de Usuario
+│       ├── Ticket.java               → Gestión de tickets con validaciones
+│       │   • Vencimiento automático
+│       │   • Validación de estado
+│       │   • Canje con horario
+│       │   • Cancelación
+│       │
+│       └── RangoHorario.java         → Ventanas de tiempo
+│
+├── ⚙️  SISTEMA Y LÓGICA (4 archivos)
+│   └── src/main/java/comedor/sistema/
+│       ├── GestorComedor.java        → Lógica de negocio principal
+│       │   • Solicitar ticket con validaciones
+│       │   • Canjear ticket con horario
+│       │   • Cancelar ticket
+│       │   • Gestión de usuarios
+│       │   • Generación de reportes
+│       │
+│       ├── HorarioManager.java       → Gestión de horarios
+│       │   • Ventanas de entrega escalonadas
+│       │   • Ventanas de comida
+│       │   • Validación de horarios
+│       │
+│       ├── ExcelManager.java         → Persistencia con Apache POI
+│       │   • Lectura/escritura de usuarios
+│       │   • Lectura/escritura de tickets
+│       │   • Generación de reportes
+│       │
+│       └── Principal.java            → Menú y interfaz consola
+│
+├── 📄 CONFIGURACIÓN (1 archivo)
+│   └── pom.xml                       → Maven POM
+│       • Java 17
+│       • Apache POI 5.2.3
+│       • JAR ejecutable
+│
+└── 📚 DOCUMENTACIÓN (5 archivos)
+    ├── README.md                     → Documentación técnica
+    ├── GUIA_USO.md                   → Guía de usuario detallada
+    └── ESTRUCTURA.txt                → Descripción de componentes
+
+
+📝 RESUMEN DE CARACTERÍSTICAS IMPLEMENTADAS
+════════════════════════════════════════════════════════════════════════════
+
+✅ GESTIÓN DE USUARIOS
+   • 3 tipos: Estudiante, Profesor, Personal Administrativo
+   • Campos: código, nombre, email, facultad, sede, tickets activos
+   • Registro de nuevos usuarios
+   • Búsqueda por código
+
+✅ GESTIÓN DE TICKETS
+   • Solicitar: valida ventana de entrega por tipo de usuario
+   • Canjear: valida horario de comida del mismo día
+   • Cancelar: solo activos
+   • Estados: ACTIVO, CANJEADO, CANCELADO, VENCIDO
+   • Vencimiento automático al finalizar el día
+
+✅ HORARIOS ESCALONADOS (3 SEDES)
+   • Desayuno:   07:00-07:20, 07:20-07:40, 07:40-08:00 → Comida 08:00-09:00
+   • Almuerzo:   11:00-11:20, 11:20-11:40, 11:40-12:00 → Comida 12:00-13:00
+   • Cena:       18:00-18:20, 18:20-18:40, 18:40-19:00 → Comida 19:00-20:00
+
+✅ PRECIOS DIFERENCIADOS
+   • Desayuno:   S/. 2.50, S/. 3.50, S/. 3.00
+   • Almuerzo:   S/. 4.00, S/. 6.00, S/. 5.00
+   • Cena:       S/. 3.00, S/. 5.00, S/. 4.00
+
+✅ VALIDACIONES EXHAUSTIVAS
+   • Ventana de entrega de ticket
+   • Ventana de comida para canje
+   • Ticket único por tipo de comida/día
+   • Vencimiento automático
+   • Pertenencia de ticket a usuario
+
+✅ PERSISTENCIA EN EXCEL
+   • Base de datos de usuarios (usuarios.xlsx)
+   • Historial de tickets (tickets.xlsx)
+   • Reportes automáticos generados
+   • Apache POI para lectura/escritura
+
+✅ REPORTES ADMINISTRATIVOS
+   • Resumen del día (activos, canjeados, cancelados, vencidos, recaudado)
+   • Reporte de ventas por facultad
+   • Reporte de ventas por sede
+   • Reporte de tickets del día actual
+
+✅ INTERFAZ DE USUARIO
+   • Menú interactivo por consola
+   • Menú de usuario regular (6 opciones)
+   • Menú de administrador (8 opciones)
+   • Registro de nuevos usuarios
+   • Visualización de horarios
+
+
+🔧 TECNOLOGÍA UTILIZADA
+════════════════════════════════════════════════════════════════════════════
+
+Lenguaje:        Java 17+
+Build Tool:      Maven 3.6+
+Persistencia:    Apache POI 5.2.3 (Excel XLSX)
+API Tiempo:      java.time (LocalDate, LocalTime, LocalDateTime)
+Patrón Diseño:   Patrón Manager, Pattern Enum, Herencia
+BD Usuarios:     Excel (usuarios.xlsx)
+BD Tickets:      Excel (tickets.xlsx)
+Reportes:        Excel (.xlsx)
+
+
+✨ ARCHIVOS JAVA CREADOS (14 archivos)
+════════════════════════════════════════════════════════════════════════════
+
+ENUMS (4):
+  ✓ TipoUsuario.java
+  ✓ TipoComida.java
+  ✓ EstadoTicket.java
+  ✓ Sede.java
+
+MODELO (6):
+  ✓ Usuario.java
+  ✓ Estudiante.java
+  ✓ Profesor.java
+  ✓ PersonalAdministrativo.java
+  ✓ Ticket.java
+  ✓ RangoHorario.java
+
+SISTEMA (4):
+  ✓ Principal.java
+  ✓ GestorComedor.java
+  ✓ HorarioManager.java
+  ✓ ExcelManager.java
+
+
+🚀 CÓMO USAR
+════════════════════════════════════════════════════════════════════════════
+
+
+USUARIOS DE EJEMPLO PRECARGADOS:
+
+  E001 → Juan Pérez García (Estudiante)
+  E002 → María López Martínez (Estudiante)
+  E003 → Carlos Sánchez Ruiz (Estudiante)
+  P001 → Dr. Ricardo Flores Mendoza (Profesor)
+  P002 → Dra. Ana García Rodríguez (Profesor)
+  A001 → Pedro Morales Acosta (Personal)
+  A002 → Lucia Ramírez Salazar (Personal)
+
+ADMIN:
+  Contraseña: admin123
+
+
+📋 MENÚS IMPLEMENTADOS
+════════════════════════════════════════════════════════════════════════════
+
+MENÚ PRINCIPAL:
+  [1] Ingresar como usuario
+  [2] Ingresar como administrador
+  [3] Registrar nuevo usuario
+  [4] Salir
+
+MENÚ USUARIO:
+  [1] Solicitar nuevo ticket
+  [2] Canjear ticket
+  [3] Cancelar ticket
+  [4] Ver mis tickets
+  [5] Ver horarios del comedor
+  [6] Cerrar sesión
+
+MENÚ ADMINISTRADOR:
+  [1] Ver resumen del día
+  [2] Reporte de ventas por facultad
+  [3] Reporte de ventas por sede
+  [4] Reporte de tickets del día
+  [5] Ver horarios del comedor
+  [6] Listar usuarios
+  [7] Listar todos los tickets
+  [8] Cerrar sesión
+
+
+💾 ARCHIVOS GENERADOS AUTOMÁTICAMENTE
+════════════════════════════════════════════════════════════════════════════
+
+El sistema crea automáticamente:
+
+  data/usuarios.xlsx
+  data/tickets.xlsx
+  data/reporte_ventas_facultad_YYYYMMDD.xlsx
+  data/reporte_ventas_sede_YYYYMMDD.xlsx
+  data/reporte_tickets_dia_YYYYMMDD.xlsx
+
+
+📚 DOCUMENTACIÓN INCLUIDA
+════════════════════════════════════════════════════════════════════════════
+
+  README.md              → Documentación técnica completa
+  GUIA_USO.md           → Guía de usuario paso a paso
+  ESTRUCTURA.txt        → Descripción detallada de componentes
+  INICIO_RAPIDO.txt     → Guía de inicio rápido
+  RESUMEN_PROYECTO.txt  → Este archivo
+  pom.xml               → Configuración Maven
+
+
+✅ REQUISITOS PREVIOS
+════════════════════════════════════════════════════════════════════════════
+
+  • Java JDK 17 o superior
+  • Maven 3.6 o superior
+  • Acceso a escritura de archivos en la carpeta del proyecto
+
+
+════════════════════════════════════════════════════════════════════════════
+
+✅ SISTEMA COMPLETAMENTE FUNCIONAL Y LISTO PARA USAR
+
+════════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,17 @@
+comedor\modelo\RangoHorario.class
+comedor\modelo\Ticket.class
+comedor\sistema\HorarioManager.class
+comedor\sistema\Principal.class
+comedor\modelo\Profesor.class
+comedor\modelo\PersonalAdministrativo.class
+comedor\modelo\Usuario.class
+comedor\sistema\ExcelManager$1.class
+comedor\sistema\HorarioManager$1.class
+comedor\modelo\Ticket$1.class
+comedor\modelo\Estudiante.class
+comedor\enums\TipoUsuario.class
+comedor\enums\Sede.class
+comedor\sistema\GestorComedor.class
+comedor\enums\TipoComida.class
+comedor\sistema\ExcelManager.class
+comedor\enums\EstadoTicket.class
